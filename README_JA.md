@@ -94,6 +94,7 @@ Leader は自動的に Teammate を起動し、並列ウェーブでタスクを
 | `market-researcher.md` | TAM/SAM/SOM・競合ベンチマーク・定量データ収集 |
 | `trend-analyst.md` | 業界トレンド・「Why Now?」タイミング分析 |
 | `ux-researcher.md` | JTBDフレームワークによるユーザーペインポイント分析 |
+| `legal-counsel.md` | Phase 1〜3の法的リスク評価。APPROVE / CONDITIONAL / REJECT を判定し、REJECT 時は代替案を提示してプロジェクトの方向転換を促す |
 | `tech-lead.md` | 技術スタック選定・アーキテクチャ設計 |
 | `developer.md` | 実装工数見積もり・開発フロー定義 |
 | `product-manager.md` | ペルソナ・機能要件・MVPスコープ定義 |
@@ -202,22 +203,28 @@ logs/
 
 ```
 Phase 1 — リサーチ
-  Wave 1-A（並列）: T01 競合分析
+  Wave 1-A（並列）: TL0 法的初期スクリーニング        ← 法的ゲート
+                    T01 競合分析
                     T02 トレンド分析
                     T03 UXペインポイント調査
   Wave 1-B（逐次）: T04 リサーチ統合・差別化マトリクス
+                         └─ TL0=REJECT → 方向転換をここで決定
 
 Phase 2 — 技術設計
   Wave 2-A（並列）: T05 技術設計・アーキテクチャ
                     T06 UI/UXコンポーネント設計
                     T07 マーケティング戦略
-  Wave 2-B（逐次）: T08 CEO意思決定（アーキテクチャ確定）
+  Wave 2-B（逐次）: TL1 法的コンプライアンスレビュー  ← 法的ゲート
+  Wave 2-C（逐次）: T08 CEO意思決定（アーキテクチャ確定）
+                         └─ TL1=REJECT → 問題箇所を再設計
 
 Phase 3 — プロダクト定義
   Wave 3-A（並列）: T09 ペルソナ定義
                     T10 機能要件定義
                     T11 ビジネスモデル
-  Wave 3-B（逐次）: T12 CEO意思決定（MVPスコープ確定）
+  Wave 3-B（逐次）: TL2 法的最終レビュー              ← 法的ゲート
+  Wave 3-C（逐次）: T12 CEO意思決定（MVPスコープ確定）
+                         └─ TL2=REJECT → ビジネスモデルを代替案に切り替え
 
 Phase 4 — 仕様具体化
   Wave 4（並列）:   T13 技術スタックルール

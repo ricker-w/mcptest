@@ -94,6 +94,7 @@ Specialist Agent (SA) prompts that define each agent's persona, capabilities, ou
 | `market-researcher.md` | TAM/SAM/SOM, competitive benchmarking, quantitative data |
 | `trend-analyst.md` | Industry trends, "Why Now?" timing analysis |
 | `ux-researcher.md` | User pain points via JTBD framework |
+| `legal-counsel.md` | Legal risk assessment across Phases 1–3; issues APPROVE / CONDITIONAL / REJECT verdicts and proposes alternatives on rejection |
 | `tech-lead.md` | Tech stack selection, architecture design |
 | `developer.md` | Implementation estimation, dev workflow definition |
 | `product-manager.md` | Personas, functional requirements, MVP scope |
@@ -202,22 +203,28 @@ The orchestrator runs in 4 phases, each composed of parallel waves:
 
 ```
 Phase 1 — Research
-  Wave 1-A (parallel):  T01 Competitor Analysis
+  Wave 1-A (parallel):  TL0 Legal Initial Screening   ← Legal Gate
+                        T01 Competitor Analysis
                         T02 Trend Analysis
                         T03 UX Pain Points
   Wave 1-B (sequential): T04 Research Synthesis
+                              └─ TL0=REJECT → pivot direction here
 
 Phase 2 — Technical Design
   Wave 2-A (parallel):  T05 Architecture Design
                         T06 UI/UX Design
                         T07 Marketing Strategy
-  Wave 2-B (sequential): T08 CEO Decision — Architecture
+  Wave 2-B (sequential): TL1 Legal Compliance Review  ← Legal Gate
+  Wave 2-C (sequential): T08 CEO Decision — Architecture
+                              └─ TL1=REJECT → redesign here
 
 Phase 3 — Product Definition
   Wave 3-A (parallel):  T09 Persona Definition
                         T10 Functional Requirements
                         T11 Business Model
-  Wave 3-B (sequential): T12 CEO Decision — MVP Scope
+  Wave 3-B (sequential): TL2 Legal Final Review       ← Legal Gate
+  Wave 3-C (sequential): T12 CEO Decision — MVP Scope
+                              └─ TL2=REJECT → swap business model here
 
 Phase 4 — Spec Concretization
   Wave 4 (parallel):    T13 Tech Stack Rules
