@@ -9,6 +9,28 @@ firebase-debug.log
 # Node
 node_modules/
 
+# Build output
+dist/
+
+# Coverage
+coverage/
+
 # OS
 .DS_Store
 Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Claude
+.claude/
+
+# Test temp files
+tmp/
+.tmp/
+
+# pnpm
+.pnpm-store/

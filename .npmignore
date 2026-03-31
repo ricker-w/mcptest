@@ -1,0 +1,30 @@
+# Source files (not needed in npm package)
+src/
+tests/
+docs/
+logs/
+
+# Config files
+.claude/
+.github/
+biome.json
+vitest.config.ts
+tsup.config.ts
+tsconfig.json
+
+# Development
+node_modules/
+coverage/
+*.log
+
+# Git
+.git/
+.gitignore
+
+# CI/CD
+.github/
+
+# Misc
+.DS_Store
+.env
+.env.*
