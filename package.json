@@ -1,10 +1,10 @@
 {
-  "name": "mcptest",
+  "name": "@ricker-np/mcptest",
   "version": "0.1.0",
   "description": "Zero-config test runner for MCP servers",
   "type": "module",
   "bin": {
-    "mcptest": "./dist/cli/index.js"
+    "mcptest": "dist/cli/index.js"
   },
   "main": "./dist/index.cjs",
   "module": "./dist/index.js",
@@ -16,7 +16,10 @@
       "types": "./dist/index.d.ts"
     }
   },
-  "files": ["dist", "templates"],
+  "files": [
+    "dist",
+    "templates"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
@@ -50,7 +53,16 @@
   },
   "license": "MIT",
   "pnpm": {
-    "onlyBuiltDependencies": ["@biomejs/biome", "esbuild"]
+    "onlyBuiltDependencies": [
+      "@biomejs/biome",
+      "esbuild"
+    ]
   },
-  "keywords": ["mcp", "model-context-protocol", "testing", "cli", "zero-config"]
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "testing",
+    "cli",
+    "zero-config"
+  ]
 }
