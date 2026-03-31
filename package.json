@@ -1,6 +1,6 @@
 {
   "name": "@ricker-np/mcptest",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Zero-config test runner for MCP servers",
   "type": "module",
   "bin": {
